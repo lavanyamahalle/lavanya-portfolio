@@ -1,29 +1,40 @@
 import React from "react";
 
-const SkillBox = ({ logo, black, white, skill }) => {
+const SkillBox = ({ logo, skill }) => {
   return (
     <div
-    data-aos="zoom-in" data-aos-duration="1000"
-      className={
-        "box w-[11rem] h-[11rem] rounded-lg bg-" +
-        black +
-        " text-" +
-        white +
-        " shadow-2xl flex flex-col items-center justify-center gap-4 p-1 sm:w-[7.2rem] sm:h-[7.2rem] exsm:w-[6.5rem] exsm:h-[6.5rem]"
-      }
+      style={{
+        width: "10rem",
+        height: "10rem",
+        borderRadius: "10px",
+        backgroundColor: "black",
+        color: "white",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "10px",
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+      }}
     >
       <div
-        className={
-          "bg-" +
-          white +
-          " text-" +
-          black +
-          " w-14 sm:w-12 exsm:w-10 h-14 sm:h-12 exsm:h-10 p-2 rounded-full flex items-center justify-center text-6xl sm:text-4xl"
-        }
+        style={{
+          backgroundColor: "white",
+          color: "black",
+          width: "40px",
+          height: "40px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "50%",
+          fontSize: "24px",
+        }}
       >
         {logo}
       </div>
-      <p className="font-semibold exsm:text-sm">{skill}</p>
+      <p style={{ fontWeight: "bold", fontSize: "14px", marginTop: "10px" }}>
+        {skill}
+      </p>
     </div>
   );
 };

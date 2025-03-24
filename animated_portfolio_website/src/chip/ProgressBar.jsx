@@ -1,39 +1,35 @@
 import React from "react";
-import styled from "styled-components";
 
-const ProgressBar = ({ logo, name, value, duration = 3 }) => {
+const ProgressBar = ({ logo, name, value }) => {
   return (
-    <div className="flex flex-col gap-2 sm:gap-1 text-xl font-semibold ">
-      <div className="flex justify-between">
-        <p className="text-[1.15rem] flex items-center gap-3 sm:text-[1rem] exsm:text-sm exsm:gap-3">
+    <div style={{ fontSize: "18px", fontWeight: "bold", marginBottom: "10px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <p style={{ fontSize: "18px", display: "flex", alignItems: "center", gap: "10px" }}>
           {logo} {name}
-        </p>{" "}
-        {/* <span className=" text-gray-400 text-[1.1rem] sm:text-[1rem] exsm:text-sm">
-          {value}%
-        </span> */}
+        </p>
+        {/* <span style={{ color: "gray", fontSize: "16px" }}>{value}%</span> */}
       </div>
-      <div className="h-[8px] w-[100%] relative rounded-3xl bg-gray-300">
-        <Progress
-          className="w-[0%] h-[8px] absolute rounded-3xl bg-yellow-500"
+      <div
+        style={{
+          height: "8px",
+          width: "100%",
+          backgroundColor: "lightgray",
+          borderRadius: "20px",
+          overflow: "hidden",
+          marginTop: "5px",
+        }}
+      >
+        <div
           style={{
+            height: "8px",
             width: `${value}%`,
-            animation: `progress-animation ${duration}s linear`,
+            backgroundColor: "gold",
+            borderRadius: "20px",
           }}
-        ></Progress>
+        ></div>
       </div>
     </div>
   );
 };
 
 export default ProgressBar;
-
-const Progress = styled.div`
-  @keyframes progress-animation {
-    from {
-      width: 0%;
-    }
-    to {
-      width: ${(props) => props.width};
-    }
-  }
-`;
